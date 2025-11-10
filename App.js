@@ -10,6 +10,7 @@ import { Button } from "./src/components/Button";
 import { styles } from "./App.styles";
 import { KeyboardAvoidingView } from "react-native";
 import { ScrollView } from "react-native";
+import { currencies } from "./src/constants/currencies";
 
 export default function App() {
   return (
@@ -32,8 +33,17 @@ export default function App() {
 
             <Text style={styles.label}>De:</Text>
 
-            <View>
-            <Button variant='primary'></Button>
+            <View style={styles.currenciesGrid}>
+            {currencies.map(( currencies =>
+
+            <Button variant='secundary'
+            key={currencies.code}
+            currencies={currencies} 
+            >
+              
+            </Button>
+            ))}
+
 
             </View>
 

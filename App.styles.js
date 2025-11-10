@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import { colors } from "./src/styles/colors";
+import { currencies } from "./src/constants/currencies";
 
 
 export const styles = StyleSheet.create({
@@ -44,5 +45,15 @@ export const styles = StyleSheet.create({
         marginBottom: 8,
         fontSize: 14, 
     },
+
+    currenciesGrid:{
+     flexDirection: 'row',
+     flexWrap: 'wrap',
+     marginHorizontal: -4,
+     marginBottom: 16,
+     cursor: 'Pointer',
+     alignItems: 'center',
+     justifyContent: 'center'
+    }
 
 })

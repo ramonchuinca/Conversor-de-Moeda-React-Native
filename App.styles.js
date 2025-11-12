@@ -83,6 +83,10 @@ export const styles = StyleSheet.create({
 
    },
 
+   convertButtonDisabled: {
+    backgroundColor: colors.disabled,
+   }
+
 
 
 })

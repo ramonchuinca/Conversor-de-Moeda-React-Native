@@ -12,6 +12,7 @@ import { KeyboardAvoidingView } from "react-native";
 import { ScrollView } from "react-native";
 import { currencies } from "./src/constants/currencies";
 import { Input } from "./src/components/input";
+import { ResultCard } from "./src/ResultCard";
 
 export default function App() {
   return (
@@ -75,6 +76,8 @@ export default function App() {
               Converta
             </Text>
           </TouchableOpacity>
+
+          <ResultCard /> 
 
 
         </View>

@@ -1,0 +1,1 @@
+const BASE_URL = "https://exchangerate-api.com"

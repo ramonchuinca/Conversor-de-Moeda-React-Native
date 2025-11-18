@@ -14,7 +14,12 @@ export const styles = StyleSheet.create({
         color:colors.text,
         fontWeight:'bold'
     },
+    buttonPrimary : {
+        backgroundColor: colors.primary
+    },
+
+
     buttonSecondary:{
-        backgroundColor:colors.primary
+        backgroundColor:colors.secondary
     }
 })

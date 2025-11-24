@@ -11,3 +11,4 @@ export async function exchangeRateApi(fromCurrency){
         console.log(err)
     }
 }
+

@@ -15,6 +15,7 @@ import { Input } from "./src/components/input";
 import { ResultCard } from "./src/ResultCard";
 import { exchangeRateApi } from "./src/services/api";
 import { useState } from "react";
+import { convertCurrencies } from "./src/utils/convertCurrencies";
 
 export default function App() {
 
@@ -25,10 +26,20 @@ export default function App() {
   const [loading, setLoading] = useState('false');
   const [exchangeRate, setExchangeRate] = useState('null');
 
-  async function fetchExchangeRate() {
-    const data = await exchangeRateApi('BRL');
-    console.log(data);
+async function fetchExchangeRate() {
+  try {
+    const data = await exchangeRateApi(fromCurrencies);
+
+    const rate = data.rates[toCurrencies];
+
+    const convertedAmount=convertCurrencies(amount, rate)  
+    setResult(convertedAmount)
+    setExchangeRate(rate);
+  } catch (error) {
+    console.log("Erro ao buscar taxa de câmbio:", error);
   }
+}
+
 
   return (
     <KeyboardAvoidingView
@@ -66,7 +77,7 @@ export default function App() {
               ))}
             </View>
 
-            <Input label="Valor:" />
+            <Input label="Valor:" value={amount} onChangeText={setAmount}/>
 
             <TouchableOpacity style={styles.swapButton}>
               <Text style={styles.swapButtonText}>
